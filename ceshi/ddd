@@ -2088,3 +2088,16 @@ Not Found: /demo/vip_tab.js
 [pid: 4075|app: 0|req: 91/650] 218.247.217.98 () {40 vars in 655 bytes} [Tue Dec  4 11:01:16 2018] GET /demo/vip_tab.js => generated 4551 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 4073|app: 0|req: 87/651] 218.247.217.98 () {42 vars in 764 bytes} [Tue Dec  4 11:01:17 2018] GET /spider/basic.html => generated 12174 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
 [pid: 4074|app: 0|req: 92/652] 218.247.217.98 () {42 vars in 748 bytes} [Tue Dec  4 11:01:17 2018] GET /data/?page=1&limit=30 => generated 11502 bytes in 24 msecs (HTTP/1.1 200) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 4072|app: 0|req: 88/653] 218.247.217.98 () {42 vars in 729 bytes} [Tue Dec  4 11:03:02 2018] GET /index => generated 7174 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 4071|app: 0|req: 92/654] 218.247.217.98 () {42 vars in 769 bytes} [Tue Dec  4 11:03:02 2018] GET /demo/welcome.html => generated 24253 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 4075|app: 0|req: 92/655] 218.247.217.98 () {40 vars in 652 bytes} [Tue Dec  4 11:03:03 2018] GET /js/index.js => generated 7174 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+Not Found: /frame/static/js/vip_nav.js
+[pid: 4073|app: 0|req: 88/656] 218.247.217.98 () {40 vars in 670 bytes} [Tue Dec  4 11:03:03 2018] GET /frame/static/js/vip_nav.js => generated 4584 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4074|app: -1|req: -1/657] 218.247.217.98 () {44 vars in 769 bytes} [Tue Dec  4 11:03:04 2018] GET /src/frame/static/image/code.png => generated 2108 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
+Not Found: /demo/vip_tab.js
+[pid: 4072|app: 0|req: 89/658] 218.247.217.98 () {40 vars in 660 bytes} [Tue Dec  4 11:03:04 2018] GET /demo/vip_tab.js => generated 4551 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 4071|app: 0|req: 93/659] 218.247.217.98 () {42 vars in 769 bytes} [Tue Dec  4 11:03:04 2018] GET /spider/basic.html => generated 12174 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 4075|app: 0|req: 93/660] 218.247.217.98 () {42 vars in 753 bytes} [Tue Dec  4 11:03:04 2018] GET /data/?page=1&limit=30 => generated 11502 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 102 bytes (2 switches on core 0)
+[pid: 4073|app: 0|req: 89/661] 218.247.217.98 () {42 vars in 753 bytes} [Tue Dec  4 11:03:08 2018] GET /data/?page=3&limit=30 => generated 5798 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 101 bytes (2 switches on core 0)
+[pid: 4074|app: 0|req: 93/662] 218.247.217.98 () {42 vars in 812 bytes} [Tue Dec  4 11:03:20 2018] GET /demo/form?path_name=lyl_markname1 => generated 9533 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 4072|app: 0|req: 90/663] 218.247.217.98 () {48 vars in 953 bytes} [Tue Dec  4 11:03:21 2018] POST /select/by_path_name/ => generated 720 bytes in 24 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 0)

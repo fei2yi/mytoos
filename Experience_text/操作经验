@@ -1,0 +1,20 @@
+
+____________________________
+MySQL中支持emoji表情的存储:
+注意：修改列(column)的字符集.
+
+https://www.cnblogs.com/zhangwufei/p/7017325.html
+
+_________________________________________________________
+非正常日期格式正常化
+2018/12/5 -> 2018/12/05
+
+str(arrow.get(report_date, "YYYY/M/D H:m:s").datetime).split()[0].replace('-', '')
+
+_________________________________________________________
+在pycharm中启动Django服务器
+twodj 启动
+点开之后弹出如下对话框，在scrip parameters 对应的对话框中输入配置参数 runserver 0.0.0.0:8000.配置完成之后点击ok就完成了。
+http://www.cnblogs.com/callyblog/p/7898630.html
+_________________________________________________________
+python 守护进程

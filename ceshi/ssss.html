@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <TITLE> New Document </TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+//使用getJSON方法读取json数据,
+//注意：info.json可以是不同类型文件，只要其中的数据为json类型即可
+            $.getJSON('./result.json', function (result) {
+                var html_title = '';
+                var html_resultinfo = '';
+
+                html_title += '<b>' + result["title"] + '</b>';
+                $('#resultitle').after(html_title);
+                $.each(result["resultinfo"], function (i, item) {
+                    if (item["pass"] == "true") {
+                        html_resultinfo += '<tr><td>' + item['name'] + '</td>' +
+                            '<td>' + item['moudle'] + '</td>' +
+                            '<td>' + item["pass"] + '</td>' +
+                            '<td>' + item['onecepass'] + '</td>' +
+                            '<td id="' + item['moudle'] + '" class="collapsed" onclick="collapsedisplay(' + item['moudle'] + ')"><u style="color: blue;">展开</u></td></tr>';
+                    }
+                    $('#infotitle').after(html_resultinfo);//after方法:在每个匹配的元素之后插入内容。
+                });
+            });
+        });
+
+    </script>
+</HEAD>
+
+<BODY>
+<div style="margin-top: 30px">
+    <div style="font-size: 30px;text-align: center">
+        <p id="resultitle"></p>
+    </div>
+</div>
+<div id="resultinfo" style="clear: both;padding-top: 30px">
+    <table style="width: 1080px">
+        <tr id="infotitle">
+            <th style="width:360px">用例名称</th>
+            <th style="width:200px">模块名称</th>
+            <th style="width:180px">是否成功</th>
+            <th style="width:180px">一次成功</th>
+            <th style="width:160px">详情</th>
+        </tr>
+    </table>
+</div>
+
+</BODY>
+</HTML>
