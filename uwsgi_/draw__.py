@@ -7,11 +7,12 @@ import random
 text = '7QY29'
 imgsize = (90, 25)
 background = (255, 255, 255)
+background_RGBA = (255, 255, 255,0)
 color = (0, 0, 0)
 font = "C:\Windows\Fonts\simsun.ttc"
 font_size = 18
 imgmode = 'RGB'
-
+imgmode_RGBA ='RGBA'
 table = []
 for i in range(256):
     table.append(i * 256)
@@ -26,12 +27,27 @@ def _draw_character(c):
 
     dx = 0
     dy = 0
-    im = Image.new(imgmode, (w + dx, h + dy),background)
+    im = Image.new(imgmode_RGBA, (w + dx, h + dy),background_RGBA)
     Draw(im).text((dx, dy), c, font=ttfont, fill=color)
 
     # rotate
     im = im.crop(im.getbbox())
-    im = im.rotate(random.uniform(-30, 30), Image.BILINEAR, expand=1)
+    im = im.rotate(random.uniform(-30, 30),  expand=1,fillcolor=background)
+
+    pix = im.load()
+    width = im.size[0]
+    height = im.size[1]
+    for x in range(width):
+        for y in range(height):
+            r, g, b,a = pix[x, y]
+            if a==0:
+                im.putpixel((x, y), (255, 255, 255,255))
+            # elif 200>a>0:
+            #     im.putpixel((x, y), (0, 0, 0, a+25))
+            # else:
+            #     r0, r1, r2 = r, g, b
+            #     # if r0 + r1 + r2 >= 400 or r0 >= 250 or r1 >= 250 or r2 >= 250:
+            #     #     im.putpixel((x, y), (255, 255, 255))
 
     return im
 
