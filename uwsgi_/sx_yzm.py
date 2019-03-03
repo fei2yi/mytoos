@@ -89,7 +89,7 @@ while True:
                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:53.0) Gecko/20100101 Firefox/53.0',
                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'}
     try:
-        image = s.get(image_url, headers=headers, proxies=proxies, timeout=3)
+        image = s.get(image_url, headers=headers, timeout=3)
         im = Image.open(BytesIO(image.content))
 
 
@@ -102,14 +102,14 @@ while True:
                 # if r + g + b >= 450:
                 #     im.putpixel((x, y), (255, 255, 255))
 
-                r0, r1, r2 = r, g, b
-                if r0 + r1 + r2 >= 400 or r0 >= 250 or r1 >= 250 or r2 >= 250:
-                    im.putpixel((x, y), (255, 255, 255))
-
-                if r0 + r1 + r2 >= 400 or r0 >= 250 or r1 >= 250 or r2 >= 250:
-                    im.putpixel((x, y), (255, 255, 255))
-                if r0 + r1 + r2 >= 400 or r0 >= 250 or r1 >= 250 or r2 >= 250:
-                    im.putpixel((x, y), (255, 255, 255))
+                # r0, r1, r2 = r, g, b
+                # if r0 + r1 + r2 >= 400 or r0 >= 250 or r1 >= 250 or r2 >= 250:
+                #     im.putpixel((x, y), (255, 255, 255))
+                #
+                # if r0 + r1 + r2 >= 400 or r0 >= 250 or r1 >= 250 or r2 >= 250:
+                #     im.putpixel((x, y), (255, 255, 255))
+                # if r0 + r1 + r2 >= 400 or r0 >= 250 or r1 >= 250 or r2 >= 250:
+                #     im.putpixel((x, y), (255, 255, 255))
                 # if pix[x, y] != 0:
                 #     pix[x, y] = 255
                 # elif r + g + b <= 150:
@@ -117,7 +117,7 @@ while True:
                 # else:
                 #     im.putpixel((x, y), (255, 255, 255))
         im.save('out.jpg')
-        im.save('E:\chromedownload\\font1715\out0.jpg')
+        im.save('E:\data\yf\demo2\cdv\out0.jpg')
         # im.save('out.jpg')
         path = 'E:\data\pic'
 

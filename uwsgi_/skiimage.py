@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 from matplotlib import pyplot as plt
 def skim():
-    img = io.imread('out2.png',as_gray=True)  #变成灰度图
+    img = io.imread('out6.png',as_gray=True)  #变成灰度图
     thresh = filters.threshold_otsu(img) #自动确定二值化的阈值
     bwimg =(img<=thresh) #留下小于阈值的部分，及黑的部分
     b = morphology.remove_small_objects(bwimg, 20) #去掉小于40的连通域，可以先全局看看连通域的大小和位置后决定去掉的阈值

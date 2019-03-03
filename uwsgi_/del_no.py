@@ -41,7 +41,7 @@ def del_noise(img,number):
 
 
 if __name__=='__main__':
-    img_dir = 'E:\chromedownload\\font1715'
+    img_dir = 'E:\data\yf\demo2\cdv'
     img_name = os.listdir(img_dir)  # 列出文件夹下所有的目录与文件
     kernel = np.ones((5, 5), np.uint8)
     for i in range(len(img_name)):
@@ -67,6 +67,7 @@ if __name__=='__main__':
             im_temp = cv2.bilateralFilter(src=img, d=15, sigmaColor=130, sigmaSpace=150)
             im_temp = im_temp[1:-1,1:-1]
             im_temp = cv2.copyMakeBorder(im_temp, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=[255])
+            im_temp=np.where(im_temp >230, 255, 0)
             cv2.imwrite('out2.png' , im_temp)
             print("out2.png")
     print("图片预处理完成！")
