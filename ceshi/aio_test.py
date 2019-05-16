@@ -2,8 +2,8 @@ import asyncio
 from aiohttp import web
 import pymysql
 
-host = '47.95.249.180'
-user = 'yangfei'
+host = 'localhost'
+user = 'root'
 password = 'Elements123'
 db = 'spider_record'
 conn = pymysql.connect(host='{}'.format(host), port=3306, user='{}'.format(user),
@@ -33,14 +33,11 @@ v = rst['pid']
 rst = select('spider_record.mohurd_jzsc_person', one=True, cursor=cursor)
 mo = rst['pid']
 
-rst = select('spider_record.mlr_land_supply', one=True, cursor=cursor)
-mlr_land_supply_lid = rst['lid']
-
 conn.close()
 cursor.close()
 
 
-async def wanfang(request):
+async def index(request):
     global v
     v += 1
     print('wanfang', v)
@@ -53,17 +50,11 @@ async def mohurd(request):
     print('zhijianbu', mo)
     return web.Response(body='{}'.format(mo))
 
-async def tudijieguo(request):
-    global mlr_land_supply_lid
-    mlr_land_supply_lid += 1
-    print('mlr_land_supply', mlr_land_supply_lid)
-    return web.Response(body='{}'.format(mlr_land_supply_lid))
 
 async def init(loop):
     app = web.Application(loop=loop)
-    app.router.add_route('GET', '/wanfang', wanfang)
+    app.router.add_route('GET', '/index', index)
     app.router.add_route('GET', '/mohurd', mohurd)
-    app.router.add_route('GET', '/tudijieguo', tudijieguo)
     await loop.create_server(app.make_handler(), '127.0.0.1', 9000)
 
 

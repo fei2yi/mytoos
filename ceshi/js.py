@@ -1,6 +1,5 @@
-from ceshi.pdf_r import a,b
-from ceshi.fas import a,b
+import math
 
-
-if __name__ == "__main__":
-    print(4)
+area = [446958, 500000]
+tm = (area[1] - area[0]) / 100000
+tm = math.ceil(tm)

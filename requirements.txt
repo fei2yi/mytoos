@@ -39,3 +39,4 @@ matplotlib
 opencv-python
 scikit-image
 scipy
+oss2
